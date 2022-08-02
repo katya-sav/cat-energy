@@ -22,10 +22,25 @@ gulp.task('html', async function() {
       .pipe(gulp.dest('build'))
 })
 
-gulp.task('production', gulp.parallel('html', 'style'));
+gulp.task('svg', async function() {
+    gulp.src('src/svg/*.svg')
+      .pipe(plumber())
+      .pipe(gulp.dest('build/svg'))
+})
+
+gulp.task('img', async function() {
+    gulp.src('src/img/*.*')
+      .pipe(plumber())
+      .pipe(gulp.dest('build/img'))
+})
+
+gulp.task('assets', gulp.parallel('svg', 'img'))
 
 
-gulp.task("dev", gulp.series(gulp.parallel("style", "html"), function() {
+gulp.task('production', gulp.parallel('html', 'style', 'assets'));
+
+
+gulp.task("dev", gulp.series(gulp.parallel("style", "html", "assets"), function() {
     server.init({
         server: "./build",
         notify: false,
@@ -36,5 +51,7 @@ gulp.task("dev", gulp.series(gulp.parallel("style", "html"), function() {
 
     gulp.watch("src/styles/**/*.scss", gulp.series("style"));
     gulp.watch("src/*.html").on("change", gulp.series('html', server.reload));
+    gulp.watch("src/svg").on("add", gulp.series('svg', server.reload));
+    gulp.watch("src/img").on("add", gulp.series('img', server.reload));
 }));
 
