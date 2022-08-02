@@ -1,0 +1,123 @@
+@import "../shared/variables";
+
+.header {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 18px;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    &--icon-hidden {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--list-item {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #e6e6e6;
+    }
+
+    &--list-link {
+      width: 100%;
+      padding: 23px 0;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #000;
+      text-align: center;
+    }
+  }
+
+  &__wide {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+
+    @media (min-width: $tablet-width) {
+      display: flex;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding: 53px 110px;
+    }
+  }
+
+  &__wide-logo {
+    &--tablet {
+      display: block;
+
+      @media (min-width: $desktop-width) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @media (min-width: $desktop-width) {
+        display: block;
+      }
+    }
+  }
+
+  &__wide-list {
+    display: flex;
+  }
+
+  &__wide-item {
+    margin-right: 36px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      border-bottom: 2px solid #68b738;
+
+      @media (min-width: $desktop-width) {
+        border-color: #fff;
+      }
+    }
+  }
+
+  &__wide-link {
+    display: flex;
+    padding: 14px 0 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #000;
+
+    @media (min-width: $desktop-width) {
+      color: #fff;
+    }
+  }
+}

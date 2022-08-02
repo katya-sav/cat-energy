@@ -1,0 +1,35 @@
+.class1 {
+  .class2 {
+    color: red;
+    width: 1000px;
+  }
+
+  background: blanchedalmond;
+  transform: scale(1.5);
+}
+
+.privet {
+  font-size: 30px;
+  color: blue;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 24px;
+
+  &__group {
+    width: 400px;
+    background-color: #fafafa;
+  }
+
+  &__button {
+    background-color: aquamarine;
+    padding: 24px;
+
+    &--warning {
+      background-color: gold;
+    }
+  }
+}
