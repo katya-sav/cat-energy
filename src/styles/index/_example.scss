@@ -13,7 +13,7 @@
 
   @media (min-width: $tablet-width) {
     padding-bottom: 64px;
-    background-color: #fff;
+    background: linear-gradient(0deg, #eaeaea 45.05%, #fff 35%);
   }
 
   @media (min-width: $desktop-width) {
@@ -78,6 +78,7 @@
 
     @media (min-width: $tablet-width) {
       width: 100%;
+      height: 72px;
       padding: 0 30px;
       margin-bottom: 44px;
       font-size: 16px;
@@ -239,7 +240,8 @@
     align-items: center;
 
     @media (min-width: $tablet-width) {
-      width: 100%;
+      width: 622px;
+      margin-top: 32px;
     }
   }
 
@@ -263,32 +265,56 @@
   &__img {
     display: none;
     @media (min-width: $tablet-width) {
-      display: block;
       position: relative;
+      display: block;
+      width: 100%;
     }
   }
 
-  &__before {
-    width: 311px;
+  &__img-wrapper-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 622px;
+    height: 467px;
+    overflow: hidden;
+  }
 
+  &__img-wrapper-after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 311px;
+    height: 467px;
+    overflow: hidden;
+  }
+
+  &__before {
     @media (min-width: $tablet-width) {
       position: absolute;
+      z-index: 10;
       top: 0;
-      left: -300px;
+      left: 0;
       width: 622px;
+      background: linear-gradient(0deg, #eaeaea 65%, #fff 35%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background: linear-gradient(0deg, #f2f2f2 72%, #fff 35%);
     }
   }
 
   &__after {
-    display: none;
-    width: 311px;
-
     @media (min-width: $tablet-width) {
-      display: block;
       position: absolute;
+      z-index: 10;
       top: 0;
-      left: -269px;
+      right: 0;
       width: 622px;
+      background: linear-gradient(0deg, #eaeaea 65%, #fff 35%);
+    }
+    @media (min-width: $desktop-width) {
+      background: linear-gradient(0deg, #f2f2f2 72%, #fff 35%);
     }
   }
 
@@ -313,6 +339,7 @@
       margin-top: 312px;
       padding: 0;
       justify-content: center;
+      align-items: center;
     }
 
     &-text {
@@ -360,9 +387,31 @@
 
   &__slider {
     display: none;
+    width: 428px;
+    margin: 0 24px;
+    -webkit-appearance: none;
 
     @media (min-width: $tablet-width) {
       display: block;
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 428px;
+      height: 6px;
+      border-radius: 6px;
+      background: #dcdcdc;
+    }
+
+    &::-webkit-slider-thumb {
+      height: 32px;
+      width: 32px;
+      margin-top: -12px;
+      border-radius: 50%;
+      border: 12px solid #fff;
+      -webkit-appearance: none;
+      background-color: #68b738;
+      box-shadow: 0 0 1px #cdcdcd;
+      filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.16));
     }
   }
 

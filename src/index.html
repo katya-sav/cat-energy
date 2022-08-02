@@ -235,16 +235,20 @@
             />
           </div>
           <div class="example__img">
-            <img
-              class="example__before"
-              src="img/before-mobile.png"
-              alt="Example Cat"
-            />
-            <img
-              class="example__after"
-              src="img/after-mobile.png"
-              alt="Example Cat"
-            />
+            <div class="example__img-wrapper-before">
+              <img
+                class="example__before"
+                src="img/before-mobile.png"
+                alt="Example Cat"
+              />
+            </div>
+            <div id="cat-after-wrapper" class="example__img-wrapper-after">
+              <img
+                class="example__after"
+                src="img/after-mobile.png"
+                alt="Example Cat"
+              />
+            </div>
           </div>
           <div class="example__bottom">
             <div class="example__results">
@@ -252,7 +256,14 @@
               <div id="switch-cat-button" class="example__results-white">
                 <div id="switch-cat-inner" class="example__results-green"></div>
               </div>
-              <input class="example__slider" type="range" />
+              <input
+                min="0"
+                max="622"
+                step="1"
+                id="cats-range-input"
+                class="example__slider"
+                type="range"
+              />
               <p class="example__results-text">Стало</p>
             </div>
           </div>
@@ -279,6 +290,17 @@
       }
 
       button.addEventListener("click", toggleCatButton);
+    </script>
+    <script>
+      const input = document.getElementById("cats-range-input");
+      const image = document.getElementById("cat-after-wrapper");
+
+      function handleChange(event) {
+        const value = event.target.value;
+        image.style.width = `${622 - value}px`;
+      }
+
+      input.addEventListener("input", handleChange);
     </script>
   </body>
 </html>
