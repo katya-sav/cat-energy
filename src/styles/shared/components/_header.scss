@@ -1,4 +1,6 @@
-@import "../shared/variables";
+@import "../variables";
+@import "../mixins/logoOpacity";
+@import "../mixins/navigationLink";
 
 .header {
   position: relative;
@@ -13,6 +15,14 @@
 
     @media (min-width: $tablet-width) {
       display: none;
+    }
+
+    &--mobile {
+      @include logo-opacity;
+    }
+
+    &--main {
+      @include logo-opacity;
     }
 
     &--icon-hidden {
@@ -65,12 +75,14 @@
     }
 
     @media (min-width: $desktop-width) {
-      padding: 53px 110px;
+      padding: 54px 30px;
     }
   }
 
   &__wide-logo {
     &--tablet {
+      @include logo-opacity;
+
       display: block;
 
       @media (min-width: $desktop-width) {
@@ -79,6 +91,8 @@
     }
 
     &--desktop {
+      @include logo-opacity;
+
       display: none;
 
       @media (min-width: $desktop-width) {
@@ -104,10 +118,18 @@
       @media (min-width: $desktop-width) {
         border-color: #fff;
       }
+
+      &-catalog {
+        @media (min-width: $desktop-width) {
+          border-color: #68b738;
+        }
+      }
     }
   }
 
   &__wide-link {
+    @include navigation-link;
+
     display: flex;
     padding: 14px 0 10px;
     font-weight: 400;
@@ -118,6 +140,12 @@
 
     @media (min-width: $desktop-width) {
       color: #fff;
+    }
+
+    &--catalog {
+      @media (min-width: $desktop-width) {
+        color: #000;
+      }
     }
   }
 }

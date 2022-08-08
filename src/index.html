@@ -16,18 +16,22 @@
   <body>
     <header class="header">
       <div class="header__logo">
-        <img
-          class="header__logo--mobile"
-          src="svg/logo-mobile.svg"
-          alt="Logo CatEnergy"
-          width="34px"
-        />
-        <img
-          class="header__logo--main"
-          src="svg/logo-text-mobile.svg"
-          alt="CatEnergy"
-          width="100px"
-        />
+        <a href="index.html">
+          <img
+            class="header__logo--mobile"
+            src="svg/logo-mobile.svg"
+            alt="Logo CatEnergy"
+            width="34px"
+          />
+        </a>
+        <a href="index.html">
+          <img
+            class="header__logo--main"
+            src="svg/logo-text-mobile.svg"
+            alt="CatEnergy"
+            width="100px"
+          />
+        </a>
         <img
           class="header__logo--menu-close header__logo--icon-hidden"
           src="svg/logo-close-menu-mobile.svg"
@@ -44,10 +48,12 @@
       <nav class="header__navigation">
         <ul class="header__navigation--list">
           <li class="header__navigation--list-item">
-            <a href="#" class="header__navigation--list-link">Главная</a>
+            <a href="index.html" class="header__navigation--list-link"
+              >Главная</a
+            >
           </li>
           <li class="header__navigation--list-item">
-            <a href="#" class="header__navigation--list-link"
+            <a href="catalog.html" class="header__navigation--list-link"
               >Каталог продукции</a
             >
           </li>
@@ -60,28 +66,36 @@
       </nav>
 
       <div class="header__wide">
-        <img
-          class="header__wide-logo--tablet"
-          srcset="svg/logo-tablet.svg"
-          alt="Logo CatEnergy"
-          width="174px"
-        />
-        <img
-          class="header__wide-logo--desktop"
-          srcset="svg/logo-desktop.svg"
-          alt="Logo CatEnergy"
-          width="202px"
-        />
+        <a href="index.html">
+          <img
+            class="header__wide-logo--tablet"
+            srcset="svg/logo-tablet.svg"
+            alt="Logo CatEnergy"
+            width="174px"
+          />
+        </a>
+        <a href="index.html">
+          <img
+            class="header__wide-logo--desktop"
+            srcset="svg/logo-desktop.svg"
+            alt="Logo CatEnergy"
+            width="202px"
+          />
+        </a>
         <nav class="header__wide-navigation">
           <ul class="header__wide-list">
             <li class="header__wide-item header__wide-item--active">
-              <a class="header__wide-link" href="#">Главная</a>
+              <a class="header__wide-link" href="index.html">Главная</a>
             </li>
             <li class="header__wide-item">
-              <a class="header__wide-link" href="#">Каталог продукции</a>
+              <a class="header__wide-link" href="catalog.html"
+                >Каталог продукции</a
+              >
             </li>
             <li class="header__wide-item">
-              <a class="header__wide-link" href="#">Подбор программы</a>
+              <a class="header__wide-link" href="program.html"
+                >Подбор программы</a
+              >
             </li>
           </ul>
         </nav>
@@ -271,6 +285,75 @@
       </div>
       <div class="example__bg-desktop"></div>
     </section>
+    <section class="map">
+      <div class="map__img">
+        <img
+          class="map__img-desktop"
+          src="img/map.png"
+          alt="ул. Большая Конюшенная, д. 19/8
+      Санкт-Петербург"
+        />
+        <div class="map__top">
+          <p class="map__text">Приглашаем к сотрудничеству дилеров!</p>
+          <div class="map__address">
+            <p class="map__street">ул. Большая Конюшенная, д. 19/8</p>
+            <p class="map__city">Санкт-Петербург</p>
+          </div>
+        </div>
+      </div>
+      <img
+        class="map__img-mobile"
+        src="img/location-mobile.png"
+        alt="ул. Большая Конюшенная, д. 19/8
+      Санкт-Петербург"
+      />
+      <img
+        class="map__img-tablet"
+        src="img/location-tablet.png"
+        alt="ул. Большая Конюшенная, д. 19/8
+      Санкт-Петербург"
+      />
+    </section>
+    <footer class="footer">
+      <img
+        class="footer__logo"
+        src="svg/logo-text-mobile.svg"
+        alt="Logo CatEnergy"
+      />
+      <div class="footer__line"></div>
+      <div class="footer__icons">
+        <a href="#">
+          <img
+            class="footer__icons-vk"
+            src="svg/icon-vkontakte.svg"
+            alt="Icon Vkontakte"
+          />
+        </a>
+        <a href="#">
+          <img
+            class="footer__icons-inst"
+            src="svg/icon-instagram.svg"
+            alt="Icon Instagram"
+          />
+        </a>
+        <a href="#">
+          <img
+            class="footer__icons-fb"
+            src="svg/icon-facebook.svg"
+            alt="Icon Facebook"
+          />
+        </a>
+      </div>
+      <div class="footer__line"></div>
+      <div class="footer__academy">
+        <p class="footer__academy-text">HTML Academy</p>
+        <img
+          class="footer__academy-logo"
+          src="svg/logo-html.svg"
+          alt="Logo HTML-Academy"
+        />
+      </div>
+    </footer>
     <script>
       const button = document.getElementById("switch-cat-button");
       const inner = document.getElementById("switch-cat-inner");

@@ -1,0 +1,105 @@
+@import "../variables";
+@import "../mixins/logoOpacity";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 51px 30px 60px;
+
+    @media (min-width: $desktop-width) {
+      padding: 58px 110px;
+    }
+  }
+
+  &__logo {
+    @include logo-opacity;
+
+    margin-top: 39px;
+    margin-bottom: 32px;
+    width: 128px;
+    filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+
+    @media (min-width: $tablet-width) {
+      margin: 0;
+      filter: none;
+    }
+  }
+
+  &__line {
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: #d9d9d9;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 97px;
+
+    @media (min-width: $tablet-width) {
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  &__icons-vk {
+    @media (min-width: $tablet-width) {
+      width: 30px;
+      margin-right: 27px;
+    }
+  }
+
+  &__icons-inst {
+    @media (min-width: $tablet-width) {
+      width: 23px;
+      margin-right: 21px;
+    }
+  }
+
+  &__icons-fb {
+    @media (min-width: $tablet-width) {
+      width: 28px;
+    }
+  }
+
+  &__academy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px;
+    width: 100%;
+
+    @media (min-width: $tablet-width) {
+      justify-content: center;
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__academy-text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #444;
+
+    @media (min-width: $tablet-width) {
+      padding-right: 22px;
+    }
+  }
+}

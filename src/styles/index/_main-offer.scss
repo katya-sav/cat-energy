@@ -1,4 +1,5 @@
 @import "../shared/variables";
+@import "../shared/mixins/button";
 
 .offer {
   display: flex;
@@ -115,24 +116,18 @@
   }
 
   &__button {
+    @include button;
+
     margin-top: 135px;
-    padding: 7px 44px;
     max-width: 280px;
-    font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #68b738;
-    border: none;
-    cursor: pointer;
 
     @media (min-width: $tablet-width) {
       align-self: flex-start;
       z-index: 10;
       width: 244px;
-      padding: 14px 26px;
       margin-top: 49px;
       margin-left: 117px;
       font-size: 20px;
