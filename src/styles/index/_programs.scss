@@ -1,4 +1,5 @@
 @import "../shared/variables";
+@import "../shared/mixins/programArrow";
 
 .programs {
   display: flex;
@@ -132,26 +133,15 @@
     }
   }
 
-  &__button {
+  &__link {
     display: flex;
-    align-items: center;
-    padding: 4px 0;
-    margin-bottom: 18px;
-    border: none;
     width: 134px;
+    margin-bottom: 18px;
     margin-left: 20px;
-    font-size: 16px;
-    line-height: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000;
-    background-color: #f2f2f2;
 
     @media (min-width: $tablet-width) {
       margin: 0 0 53px 52px;
       width: 165px;
-      font-size: 20px;
-      line-height: 30px;
     }
 
     @media (min-width: $desktop-width) {
@@ -161,9 +151,40 @@
 
   &__arrow {
     margin-left: 15px;
+    width: 28px;
+    height: 12px;
+    transition: 0.3s;
 
     @media (min-width: $tablet-width) {
       margin-left: 25px;
+    }
+  }
+
+  &__button {
+    @include program-arrow;
+
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    border: none;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      > .programs__arrow {
+        width: 32px;
+      }
+    }
+
+    @media (min-width: $tablet-width) {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 }

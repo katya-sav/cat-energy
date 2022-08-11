@@ -1,0 +1,13 @@
+@mixin logo-opacity() {
+  opacity: 1;
+  transition: 0.3s opacity;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

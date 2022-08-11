@@ -1,0 +1,144 @@
+@import "../variables";
+
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+
+  &__img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media (min-width: $desktop-width) {
+      position: relative;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 22px;
+    padding: 0 19px;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 66px;
+      margin-bottom: 51px;
+      padding: 0 72px;
+    }
+
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      top: 95px;
+      left: 110px;
+      margin: 0;
+      padding: 60px 89px 60px 76px;
+      width: 570px;
+      background-color: #fff;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #111;
+
+    @media (min-width: $tablet-width) {
+      width: 171px;
+      font-size: 20px;
+      line-height: 21px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (min-width: $tablet-width) {
+      align-items: flex-end;
+      width: 159px;
+      text-align: right;
+
+      @media (min-width: $desktop-width) {
+        align-items: flex-start;
+        text-align: start;
+      }
+    }
+  }
+
+  &__street {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 14px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__city {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__img-mobile {
+    width: 100%;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  &__img-tablet {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+      width: 100%;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  &__img-desktop {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: block;
+      width: 100%;
+    }
+  }
+}

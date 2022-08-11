@@ -1,0 +1,15 @@
+@mixin form-value() {
+  outline: none;
+
+  &:hover {
+    border: 1px solid #cdcdcd;
+  }
+
+  &:focus {
+    border: 1px solid #444;
+
+    + .form__icon {
+      color: #68b738;
+    }
+  }
+}

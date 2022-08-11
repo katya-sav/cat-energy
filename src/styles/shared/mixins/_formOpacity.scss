@@ -1,0 +1,9 @@
+@mixin form-opacity() {
+  &:hover {
+    color: #222;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

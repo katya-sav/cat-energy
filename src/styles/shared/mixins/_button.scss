@@ -1,0 +1,28 @@
+@mixin button(
+  $bgColor: #68b738,
+  $actionColor: #5eaa2f,
+  $fontColor: #fff,
+  $actionFontColor: rgba(255 255 255 / 30%)
+) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 24px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $fontColor;
+  background-color: $bgColor;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $actionColor;
+  }
+
+  &:active {
+    color: $actionFontColor;
+    background-color: $actionColor;
+  }
+}
