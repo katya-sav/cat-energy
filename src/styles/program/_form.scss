@@ -1,6 +1,8 @@
 /* stylelint-disable property-no-vendor-prefix */
 @import "../shared/variables";
 @import "../shared/mixins/button";
+@import "../shared/mixins/formOpacity";
+@import "../shared/mixins/formValue";
 
 .form {
   max-width: 1440px;
@@ -178,7 +180,10 @@
     }
 
     &--purpose {
+      @include form-opacity;
+
       color: #222;
+      transition: 0.3s;
 
       @media (min-width: $desktop-width) {
         margin: 0;
@@ -200,7 +205,10 @@
     }
 
     &--addition {
+      @include form-opacity;
+
       color: #000;
+      transition: 0.3s;
 
       @media (min-width: $tablet-width) {
         margin-bottom: 37px;
@@ -215,6 +223,7 @@
 
   &__icon {
     position: absolute;
+    z-index: 1;
     top: 17px;
     left: calc(100% - 32px);
   }
@@ -224,9 +233,15 @@
   }
 
   &__value {
+    @include form-value;
+
+    position: relative;
+    z-index: 2;
     padding: 14px;
     flex: 1;
     border: 1px solid #e7e7e7;
+    background-color: transparent;
+    transition: 0.3s;
 
     &::placeholder {
       font-weight: 400;
@@ -270,6 +285,10 @@
     @media (min-width: $tablet-width) {
       width: 40px;
       height: 40px;
+    }
+
+    &:hover {
+      border: 1px solid #bababa;
     }
 
     &::before {
@@ -325,22 +344,23 @@
   &__textarea {
     width: 100%;
     border: 1px solid #e7e7e7;
+    resize: none;
+    padding-top: 10px;
+    padding-left: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+
+    @media (min-width: $tablet-width) {
+      padding-left: 19px;
+      text-align: start;
+      font-size: 20px;
+      line-height: 30px;
+    }
 
     &::placeholder {
-      padding-top: 10px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 18px;
       text-transform: uppercase;
-      text-align: center;
       color: #444;
-
-      @media (min-width: $tablet-width) {
-        padding-left: 19px;
-        text-align: start;
-        font-size: 20px;
-        line-height: 30px;
-      }
     }
   }
 
@@ -361,6 +381,7 @@
 
     margin: 0 20px;
     width: calc(100% - 40px);
+    transition: 0.3s;
 
     @media (min-width: $tablet-width) {
       margin: 0;
@@ -391,6 +412,26 @@
       line-height: 16px;
       margin: 0;
       margin-left: 61px;
+    }
+  }
+}
+
+.form__value-name--error {
+  border: 1px solid red;
+
+  + .form__icon {
+    color: red;
+  }
+
+  &:hover {
+    border: 1px solid red;
+  }
+
+  &:focus {
+    border: 1px solid red;
+
+    + .form__icon {
+      color: red;
     }
   }
 }

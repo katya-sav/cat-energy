@@ -1,0 +1,9 @@
+@mixin program-arrow() {
+  &:hover {
+    color: #000;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../mixins/logoOpacity";
+@import "../mixins/logoFooter";
 
 .footer {
   display: flex;
@@ -26,6 +27,7 @@
     margin-bottom: 32px;
     width: 128px;
     filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+    transition: 0.3s;
 
     @media (min-width: $tablet-width) {
       margin: 0;
@@ -57,22 +59,51 @@
   }
 
   &__icons-vk {
+    @include logo-footer;
+
+    width: 23px;
+    height: 16px;
+    fill: #666;
+    transition: 0.3s;
+
     @media (min-width: $tablet-width) {
       width: 30px;
+      height: 22px;
       margin-right: 27px;
+      fill: #666;
     }
   }
 
   &__icons-inst {
+    @include logo-footer;
+
+    width: 16px;
+    fill: #666;
+    transition: 0.3s;
+
     @media (min-width: $tablet-width) {
       width: 23px;
       margin-right: 21px;
+      fill: #666;
     }
   }
 
   &__icons-fb {
+    @include logo-footer;
+
+    width: 22px;
+    stroke: #666;
+    transition: 0.3s;
+
     @media (min-width: $tablet-width) {
       width: 28px;
+      height: 33px;
+      stroke: #666;
+    }
+
+    &:hover {
+      stroke: #68b738;
+      fill: none;
     }
   }
 
@@ -86,20 +117,36 @@
     @media (min-width: $tablet-width) {
       justify-content: center;
       padding: 0;
-      width: auto;
+      width: 25%;
     }
   }
 
-  &__academy-text {
+  &__academy-name {
+    @include logo-footer;
+
     font-family: Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
     color: #444;
+    transition: 0.3s;
 
     @media (min-width: $tablet-width) {
       padding-right: 22px;
     }
+
+    &:hover {
+      color: #444;
+    }
+  }
+
+  &__academy-logo {
+    @include logo-footer;
+
+    width: 27px;
+    height: 34px;
+    fill: #666;
+    transition: 0.3s;
   }
 }

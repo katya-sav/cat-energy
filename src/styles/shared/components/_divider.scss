@@ -43,7 +43,9 @@
     }
 
     &--form {
+      max-width: 55%;
       @media (min-width: $tablet-width) {
+        max-width: 100%;
         margin: 0 39px;
       }
 

@@ -19,10 +19,14 @@
 
     &--mobile {
       @include logo-opacity;
+
+      transition: 0.3s;
     }
 
     &--main {
       @include logo-opacity;
+
+      transition: 0.3s;
     }
 
     &--icon-hidden {
@@ -62,6 +66,10 @@
       color: #000;
       text-align: center;
     }
+
+    &--visible {
+      display: block;
+    }
   }
 
   &__wide {
@@ -84,9 +92,14 @@
       @include logo-opacity;
 
       display: block;
+      transition: 0.3s;
 
       @media (min-width: $desktop-width) {
         display: none;
+      }
+
+      & > img {
+        display: block;
       }
     }
 
@@ -94,8 +107,13 @@
       @include logo-opacity;
 
       display: none;
+      transition: 0.3s;
 
       @media (min-width: $desktop-width) {
+        display: block;
+      }
+
+      & > img {
         display: block;
       }
     }
@@ -137,6 +155,7 @@
     line-height: 24px;
     text-transform: uppercase;
     color: #000;
+    transition: 0.3s;
 
     @media (min-width: $desktop-width) {
       color: #fff;
